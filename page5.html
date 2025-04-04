@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<style>
+    /* General Page Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Hotel Section Styling */
+.hotel-container {
+    padding: 40px;
+}
+
+.hotel-container h1 {
+    font-size: 32px;
+    color: #007bff;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+/* Hotel Cards */
+.hotel-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.hotel-card {
+    background: white;
+    width: 250px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.hotel-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Hotel Image */
+.hotel-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Hotel Title */
+.hotel-card h3 {
+    color: #333;
+    margin: 10px 0;
+}
+
+/* Book Now Button */
+.hotel-card button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.hotel-card button:hover {
+    background: #0056b3;
+}
+
+</style>
+    <div class="hotel-container">
+        <h1>Available Hotels</h1>
+
+        <div class="hotel-list">
+            <div class="hotel-card">
+                <img src="c:\Users\Apoorv Kulkarni\OneDrive\Documents\Pictures\hotel1.jpg" alt="Hotel 1">
+                <h3>Grand Palace Hotel</h3>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p>Price: <b>₹3000/night</b></p>
+                <button>Book Now</button>
+            </div>
+
+            <div class="hotel-card">
+                <img src="c:\Users\Apoorv Kulkarni\OneDrive\Documents\Pictures\hotel2.jpg" alt="Hotel 2">
+                <h3>Beachfront Resort</h3>
+                <p>⭐⭐⭐⭐</p>
+                <p>Price: <b>₹2000/night</b></p>
+                <button>Book Now</button>
+            </div>
+
+            <div class="hotel-card">
+                <img src="c:\Users\Apoorv Kulkarni\OneDrive\Documents\Pictures\hotel3.jpg" alt="Hotel 3">
+                <h3>Skyline Hotel</h3>
+                <p>⭐⭐⭐⭐</p>
+                <p>Price: <b>₹2500/night</b></p>
+                <button>Book Now</button>
+            </div>
+
+            <div class="hotel-card">
+                <img src="c:\Users\Apoorv Kulkarni\OneDrive\Documents\Pictures\hotel4.jpg" alt="Hotel 4">
+                <h3>Mountain View Lodge</h3>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p>Price: <b>₹4000/night</b></p>
+                <button>Book Now</button>
+            </div>
+
+            <div class="hotel-card">
+                <img src="c:\Users\Apoorv Kulkarni\OneDrive\Documents\Pictures\hotel5.jpg" alt="Hotel 5">
+                <h3>The Himalayan Retreat</h3>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p>Price: <b>₹3750/night</b></p>
+                <button>Book Now</button>
+            </div>
+
+            <div class="hotel-card">
+                <img src="c:\Users\Apoorv Kulkarni\OneDrive\Documents\Pictures\hotel6.jpg" alt="Hotel 6">
+                <h3>Green Valley Hideaway</h3>
+                <p>⭐⭐⭐⭐</p>
+                <p>Price: <b>₹3500/night</b></p>
+                <button>Book Now</button>
+            </div>
+
+            <div class="hotel-card">
+                <img src="c:\Users\Apoorv Kulkarni\OneDrive\Documents\Pictures\hotel7.jpg" alt="Hotel 7">
+                <h3>Riverside Bliss</h3>
+                <p>⭐⭐⭐⭐</p>
+                <p>Price: <b>₹2800/night</b></p>
+                <button>Book Now</button>
+            </div>
+
+            <div class="hotel-card">
+                <img src="c:\Users\Apoorv Kulkarni\OneDrive\Documents\Pictures\hotel8.jpg" alt="Hotel 8">
+                <h3>Lush Green Escape</h3>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p>Price: <b>₹4200/night</b></p>
+                <button>Book Now</button>
+            </div>
+           
+            <div class="hotel-card">
+                <img src="c:\Users\Apoorv Kulkarni\OneDrive\Documents\Pictures\hotel9.jpg" alt="Hotel 9">
+                <h3>Evergreen Eco Resort</h3>
+                <p>⭐⭐⭐⭐</p>
+                <p>Price: <b>₹3100/night</b></p>
+                <button>Book Now</button>
+            </div>
+
+            <div class="hotel-card">
+                <img src="c:\Users\Apoorv Kulkarni\OneDrive\Documents\Pictures\hotel10.jpg" alt="Hotel 10">
+                <h3>Blue Lagoon Haven hotel</h3>
+                <p>⭐⭐⭐⭐</p>
+                <p>Price: <b>₹2800/night</b></p>
+                <button>Book Now</button>
+            </div>
+
+            <div class="hotel-card">
+                <img src="c:\Users\Apoorv Kulkarni\OneDrive\Documents\Pictures\hotel11.jpg" alt="Hotel 11">
+                <h3>Tranquil Woods Inn</h3>
+                <p>⭐⭐⭐</p>
+                <p>Price: <b>₹1000/night</b></p>
+                <button>Book Now</button>
+            </div>
+
+            <div class="hotel-card">
+                <img src="c:\Users\Apoorv Kulkarni\OneDrive\Documents\Pictures\hotel12.jpg" alt="Hotel 12">
+                <h3>Sunrise Valley Retreat</h3>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p>Price: <b>₹5000/night</b></p>
+                <button>Book Now</button>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

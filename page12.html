@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #e0f7ff;
+            padding: 20px;
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .ticket {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+            display: inline-block;
+            transition: transform 0.3s ease-in-out;
+        }
+        .ticket:hover {
+            transform: scale(1.05);
+        }
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+            transition: background 0.3s ease-in-out;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        h2 {
+            color: #004080;
+            animation: slideIn 1s ease-in-out;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <h2>🎉 Ticket Confirmed! 🎟️</h2>
+    
+    <div class="ticket">
+        <h3 style="color: #004080;">Bus Ticket Details</h3>
+        <p><strong></strong> </p>
+        <p><strong>Passenger:</strong> Cristiano Ronaldo</p>
+        <p><strong>From:</strong>  Pune</p>
+        <p><strong>To:</strong> Mumbai</p>
+        <p><strong>Date:</strong> <span id="ticketDate">Select a date</span></p>
+        <p><strong>Seat No:</strong> 7</p>
+        <p><strong>Price:</strong> 1200Rs</p>
+        <button class="btn" onclick="downloadTicket()">Download Ticket</button>
+    </div>
+    
+    <script>
+        // Function to automatically update the date in the ticket
+        function updateTicketDate(selectedDate) {
+            document.getElementById('ticketDate').innerText = selectedDate ? selectedDate : 'Select a date';
+        }
+        
+        // Example of updating the ticket date directly (You can call this function with the date when needed)
+        // Here we simulate setting the date (you can trigger this based on user input)
+        updateTicketDate("10th April 2025");
+        
+        // Function to download the ticket
+        function downloadTicket() {
+            const selectedDate = document.getElementById('ticketDate').innerText;
+            const ticketData = `Ticket Confirmation\n\nPassenger: Cristiano Ronaldo\nFrom: Pune\nTo: Mumbai\nDate: ${selectedDate}\nSeat No: 7\nPrice: 1200Rs`;
+            const blob = new Blob([ticketData], { type: 'text/plain' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'ticket.txt';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

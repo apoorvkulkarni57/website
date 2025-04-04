@@ -1,0 +1,246 @@
+body {
+font-family: Arial, Helvetica, sans-serif;
+margin: 0;
+padding: 0;
+}
+
+header {
+  background-color: #008cff;
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+header nav a {
+  color: #000000;
+  text-decoration: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+}
+
+.search-section {
+  background-color: #008cff;
+  padding: 1em;
+  border: 1px solid #ffffff;
+  box-shadow: 0 0 10px
+  #ffffff;
+}
+
+.search-section h2 {
+margin-top: 20px;
+}
+
+.search-section form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.search-section input [type="text"], .search-section input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+
+.search-section button[type="submit"] {
+  background-color: #ffffff;
+  color: #008cff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popular-routes-section {
+  margin-top: 20px;
+}
+
+.popular-routes-section h2 {
+  margin-top: 0;
+}
+
+.popular-routes-section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.popular-routes-section li {
+  margin-bottom: 10px;
+}
+
+.popular-routes-section a {
+  text-decoration: none;
+  color: #008cff;
+}
+
+footer {
+  background-color: #008cff;
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+  clear: both;
+}
+
+.logo {
+  width: 200px;
+  height: 100px;
+  margin-right: 20px;
+}
+
+#from, #to {
+  margin: 10px;
+}
+
+.search-section input[type="text"]  {
+padding: 0px;
+margin-bottom: 0px;
+}
+
+.search-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+}
+
+.login-container {
+  width: 500px;
+  margin: 100px auto;
+  padding: 100px;
+  background-color: #008cff;
+  border: 5px solid #ffffff;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0,);
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.login-container label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.login-container input[type="text"], .login-container input[type="password"] {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ffffff;
+}
+
+.login-container input[type="submit"] {
+  width: 90%;
+  padding: 50px;
+  background-color:#ffffff ;
+  color: #008cff;
+  border: 10px;
+  cursor: pointer;
+}
+
+.login-container input[type="submit"]:hover {
+  background-color: #ffffff;
+}
+
+p {
+  justify-content: center;
+}
+
+.customer-reviews {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #008cff;
+  border: 2px solid #ddd;
+  box-shadow: 0px 0px 0px
+  rgba(0, 0, 0, 0.1);
+}
+
+.rating {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+.star {
+  width: 20px;
+  height: 20px;
+  background-color: #008cff;
+  margin-right: 5px;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 74%, 21% 91%, 32% 57%, 2% 35%, 39% 35% );
+}
+
+.star.active {
+  background-color: #ffd700;
+}
+
+.author {
+  font-size: 15px;
+  color: #ffffff;
+}
+
+.customer-reviews h2 {
+  color: #000;
+}
+
+.book-now {
+  background-color: #ff9900; 
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.book-now:hover {
+  background-color: #ffa07a;
+
+}
+/* About Us */
+  h1 {
+  color: #000;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

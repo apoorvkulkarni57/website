@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Listing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f5ff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .bus-card {
+            width: 600px;
+            background: linear-gradient(135deg, #007BFF, #0056b3);
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+            margin-bottom: 20px;
+        }
+        .bus-card:hover {
+            transform: scale(1.05);
+        }
+        .bus-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .bus-title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .bus-time {
+            font-size: 16px;
+        }
+        .bus-details {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .price-button {
+            background-color: white;
+            color: #007BFF;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: background 0.3s, color 0.3s;
+        }
+        .price-button:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const buses = [
+            { name: "Orange Tours and Travels Platinum", date: "22 Mar", time: "15:30", from: "Hyderabad", to: "Bangalore", duration: "9 Hrs", seats: 38, price: "₹1,000" },
+            { name: "VRL Travels", date: "23 Mar", time: "16:00", from: "Pune", to: "Mumbai", duration: "3 Hrs", seats: 25, price: "₹1200" },
+            { name: "SRS Travels", date: "24 Mar", time: "18:45", from: "Delhi", to: "Jaipur", duration: "5 Hrs", seats: 40, price: "₹950" },
+            { name: "KSRTC", date: "25 Mar", time: "20:00", from: "Chennai", to: "Coimbatore", duration: "7 Hrs", seats: 30, price: "₹1,100" },
+            { name: "Greenline Travels", date: "26 Mar", time: "22:15", from: "Kolkata", to: "Darjeeling", duration: "10 Hrs", seats: 20, price: "₹1,200" },
+            { name: "Rajdhani Express", date: "27 Mar", time: "19:30", from: "Ahmedabad", to: "Surat", duration: "4 Hrs", seats: 35, price: "₹750" },
+            { name: "BlueBus Travels", date: "28 Mar", time: "21:00", from: "Goa", to: "Mangalore", duration: "6 Hrs", seats: 28, price: "₹900" },
+            { name: "Parveen Travels", date: "29 Mar", time: "23:45", from: "Trivandrum", to: "Kochi", duration: "5 Hrs", seats: 32, price: "₹1,050" },
+            { name: "Sharma Transport", date: "30 Mar", time: "14:20", from: "Nagpur", to: "Indore", duration: "7 Hrs", seats: 26, price: "₹1,150" },
+            { name: "KPN Travels", date: "31 Mar", time: "17:10", from: "Madurai", to: "Trichy", duration: "3 Hrs", seats: 22, price: "₹850" }
+        ];
+        
+        document.addEventListener("DOMContentLoaded", () => {
+            const container = document.body;
+            buses.forEach(bus => {
+                const busCard = document.createElement("div");
+                busCard.classList.add("bus-card");
+                busCard.innerHTML = `
+                    <div class="bus-header">
+                        <span class="bus-title">${bus.name}</span>
+                        <span class="bus-time">${bus.date} - ${bus.time}</span>
+                    </div>
+                    <div class="bus-details">
+                        <span>${bus.from} ➝ ${bus.to}</span>
+                        <span>Duration: ${bus.duration}</span>
+                    </div>
+                    <div class="bus-details" style="margin-top: 10px;">
+                        <span>Seats Available: ${bus.seats}</span>
+                        <a href="#" class="price-button">${bus.price} - Show Seats</a>
+                    </div>
+                `;
+                container.appendChild(busCard);
+            });
+        });
+    </script>
+</body>
+</html>

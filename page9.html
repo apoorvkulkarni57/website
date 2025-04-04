@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Seat Booking</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f8ff;
+        }
+        .seat-container {
+            display: grid;
+            grid-template-columns: repeat(4, 60px);
+            gap: 15px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .seat {
+            width: 60px;
+            height: 60px;
+            background-color: blue;
+            text-align: center;
+            line-height: 60px;
+            color: white;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: transform 0.2s, background-color 0.3s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .seat:hover {
+            transform: scale(1.1);
+        }
+        .booked {
+            background-color: darkgray !important;
+            cursor: not-allowed;
+        }
+        .selected {
+            background-color: deepskyblue !important;
+            animation: pulse 0.5s;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        @keyframes glow {
+            0% { box-shadow: 0 0 5px blue; }
+            50% { box-shadow: 0 0 15px deepskyblue; }
+            100% { box-shadow: 0 0 5px blue; }
+        }
+        .seat:hover, .selected {
+            animation: glow 1s infinite alternate;
+        }
+        .payment-container {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transform: scale(1.05);
+        }
+        .payment-container button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #0099ff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="seat-container" id="seatContainer"></div>
+    <div class="payment-container" id="paymentContainer">
+        <p>Proceed to Payment for Seat <span id="selectedSeat"></span>?</p>
+        <button onclick="proceedToPayment()"><a href="page10.html">Pay Now</a></button>
+    </div>
+
+    <script>
+        const totalSeats = 20;
+        const bookedSeats = [2, 5, 9, 14, 16, 20]; // Example booked seats
+
+        function showSeats() {
+            const container = document.getElementById("seatContainer");
+            container.innerHTML = "";
+            
+            for (let i = 1; i <= totalSeats; i++) {
+                const seat = document.createElement("div");
+                seat.classList.add("seat");
+                seat.innerText = i;
+                
+                if (bookedSeats.includes(i)) {
+                    seat.classList.add("booked");
+                } else {
+                    seat.onclick = () => toggleSelect(seat, i);
+                }
+                
+                container.appendChild(seat);
+            }
+        }
+        
+        function toggleSelect(seat, seatNumber) {
+            if (!seat.classList.contains("booked")) {
+                document.querySelectorAll(".seat").forEach(s => s.classList.remove("selected"));
+                seat.classList.add("selected");
+                document.getElementById("selectedSeat").innerText = seatNumber;
+                document.getElementById("paymentContainer").style.display = "block";
+            }
+        }
+
+        function proceedToPayment() {
+            alert("processing your payment...");
+        }
+        
+        // Automatically show seats when the page loads
+        document.addEventListener("DOMContentLoaded", showSeats);
+    </script>
+</body>
+</html>

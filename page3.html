@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Booking</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f8f9fa; margin: 0; padding: 20px; }
+        .container { max-width: 900px; margin: auto; }
+        .sort-section { text-align: center; margin-bottom: 20px; padding: 15px; background: white; border-radius: 10px; box-shadow: 0px 2px 5px rgba(0,0,0,0.1); }
+        .sort-section h2 { margin-bottom: 10px; }
+        .sort-section button { margin: 5px; padding: 8px 15px; border: none; cursor: pointer; background: #007bff; color: white; border-radius: 5px; font-size: 14px; }
+        .sort-section button:hover { background: #0056b3; }
+        .bus-list { margin-top: 10px; }
+        .bus-item { background: white; padding: 15px; margin-bottom: 15px; border-radius: 10px; box-shadow: 0px 2px 5px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center; }
+        .bus-details { flex: 1; }
+        .bus-name { font-size: 18px; font-weight: bold; }
+        .bus-type { font-size: 14px; color: #555; margin-top: 3px; }
+        .bus-meta { display: flex; align-items: center; margin-top: 8px; font-size: 14px; }
+        .rating { background: #28a745; color: white; padding: 3px 8px; border-radius: 5px; margin-right: 10px; }
+        .bus-time { text-align: center; font-size: 14px; min-width: 180px; }
+        .bus-time strong { display: block; font-size: 18px; }
+        .price-section { text-align: right; min-width: 120px; }
+        .price { font-size: 20px; font-weight: bold; color: #000; }
+        .show-seats { background: #0099ff; color: white; border: none; padding: 8px 15px; font-size: 14px; cursor: pointer; border-radius: 5px; margin-top: 5px; }
+        .show-seats:hover { background: #0099ff; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="sort-section">
+            <h2>Sort by:</h2>
+            <button onclick="sortBuses('price')">Price</button>
+            <button onclick="sortBuses('seats')">Seats Available</button>
+            <button onclick="sortBuses('rating')">Ratings</button>
+            <button onclick="sortBuses('arrival')">Arrival Time</button>
+            <button onclick="sortBuses('departure')">Departure Time</button>
+        </div>
+
+        <div class="bus-list" id="busList">
+            <!-- Bus items will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        let buses = [
+            { name: "Orange Tours and Travels", type: "VOLVO AC Sleeper (2+1)", price: 1000, seats: 25, rating: 3.7, arrival: "00:30", departure: "15:30", duration: "09:00 Hrs", from: "Hyderabad", to: "Bangalore" },
+            { name: "VRL Travels", type: "Sleeper AC (2+1)", price: 1200, seats: 25, rating: 4.5, arrival: "06:30", departure: "21:00", duration: "09:30 Hrs", from: "Pune", to: "Mumbai" },
+            { name: "KSRTC Airavat", type: "Semi Sleeper AC", price: 950, seats: 25, rating: 4.2, arrival: "05:45", departure: "22:15", duration: "07:30 Hrs", from: "Delhi", to: "Agra" },
+            { name: "SRS Travels", type: "Non AC Sleeper", price: 780, seats: 25, rating: 3.9, arrival: "08:00", departure: "23:30", duration: "08:30 Hrs", from: "Chennai", to: "Coimbatore" },
+            { name: "Rajdhani Express", type: "AC Seater", price: 680, seats: 25, rating: 4.1, arrival: "07:00", departure: "22:00", duration: "09:00 Hrs", from: "Jaipur", to: "Delhi" },
+            { name: "BlueBus Premium", type: "Luxury Sleeper AC", price: 1200, seats: 25, rating: 4.8, arrival: "06:15", departure: "21:45", duration: "08:30 Hrs", from: "Ahmedabad", to: "Surat" },
+            { name: "Parveen Travels", type: "Volvo AC Multi-Axle", price: 1100, seats: 25, rating: 4.6, arrival: "05:30", departure: "20:30", duration: "09:00 Hrs", from: "Kolkata", to: "Patna" },
+            { name: "Sharma Travels", type: "Non AC Sleeper", price: 600, seats: 25, rating: 3.8, arrival: "09:45", departure: "00:15", duration: "09:30 Hrs", from: "Bhopal", to: "Indore" },
+            { name: "Eagle Travels", type: "Luxury AC Sleeper", price: 1050, seats: 25, rating: 4.7, arrival: "04:00", departure: "19:30", duration: "08:30 Hrs", from: "Lucknow", to: "Kanpur" },
+            { name: "Jabbar Travels", type: "Seater AC (2+2)", price: 500, seats: 25, rating: 3.6, arrival: "08:30", departure: "00:30", duration: "08:00 Hrs", from: "Goa", to: "Mumbai" }
+        ];
+
+        function displayBuses() {
+            let busList = document.getElementById("busList");
+            busList.innerHTML = "";
+            buses.forEach(bus => {
+                busList.innerHTML += `
+                    <div class="bus-item">
+                        <div class="bus-details">
+                            <div class="bus-name">${bus.name}</div>
+                            <div class="bus-type">${bus.type}</div>
+                            <div class="bus-meta">
+                                <span class="rating">⭐ ${bus.rating}</span>
+                                <span>${bus.seats} Seats Available</span>
+                            </div>
+                        </div>
+                        <div class="bus-time">
+                            <strong>${bus.departure}</strong>
+                            <span>${bus.from}</span>
+                            <div>${bus.duration}</div>
+                            <strong>${bus.arrival}</strong>
+                            <span>${bus.to}</span>
+                        </div>
+                        <div class="price-section">
+                            <div class="price">₹${bus.price}</div>
+                          <button><a href="page9.html">Show Seats</a></button>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function sortBuses(criteria) {
+            if (criteria === "price" || criteria === "seats" || criteria === "rating") {
+                buses.sort((a, b) => a[criteria] - b[criteria]);
+            } else if (criteria === "arrival" || criteria === "departure") {
+                buses.sort((a, b) => a[criteria].localeCompare(b[criteria]));
+            }
+            displayBuses();
+        }
+
+        displayBuses();
+    </script>
+
+</body>
+</html>
