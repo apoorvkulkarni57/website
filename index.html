@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueBus</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<script>
+    flatpickr("#date",  {
+        altInput: true,
+        altFormat: "F j, Y",
+        dateFormat: "Y-m-d",
+    });
+
+</script>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li>
+                <img src="c:\Users\Apoorv Kulkarni\OneDrive\Desktop\imgbus.jpg" alt="logo" class="logo">
+            </li>
+            <i class="fa-solid fa-house"></i>
+            <li><a href="#"><button><a href="page7.html">Home</a></button></a></li>
+
+                <i class="fa-solid fa-ticket"></i>
+                <li><a href="#"><button><a href="page6.html">Bus Ticket</a></button></a></li>
+
+                    <i class="fa-solid fa-hotel"></i>
+                    <li><a href="#"><button><a href="page5.html">Hotel Booking</a></button></a></li>
+                    
+
+                    <i class="fa-sharp fa-solid fa-handshake-angle"></i>
+                    <li><a href="#"><button><a href="page4.html">Customer Service</a></button></a></li>
+
+                    <i class="fa-solid fa-circle-user"></i>
+                    <li><a href="#"><button><a href="page8.html">Account</a></button></a></li>
+                    
+                    </ul>
+                </nav>
+</header>
+
+
+ <main>
+    <section class="search-section"><h2>Search for Bus Tickets</h2>
+            <form action="booking.php" method="post">
+                <i class="fa-solid fa-bus"></i>
+<input type="text" id="from" name="from" placeholder="From">
+<i class="fa-solid fa-location-dot"></i>
+<input type="text" id="to" name="to" placeholder="To">
+<input type="date" id="date" name="date" placeholder="Date">
+<i class="fa-solid fa-person-walking-luggage"></i>
+<input type="number" id="passengers" name="passengers" placeholder="Passengers"> 
+</form>
+
+<button><a href="page3.html">search</a></button>  <!--Page Change-->
+
+
+
+
+
+    </section>
+
+</main>
+<footer>
+
+<!-- Offers Section -->
+<div class="offers-section">
+    <div class="offers-title">Bus Booking Discount Offers</div>
+    <div class="offers-container">
+        <div class="offer-card" onclick="window.open('#', '_blank')">
+            <img src="c:\Users\Apoorv Kulkarni\OneDrive\Documents\Pictures\card1img.jpg" alt="Offer 1">
+        </div>
+        <div class="offer-card" onclick="window.open('#', '_blank')">
+            <img src="c:\Users\Apoorv Kulkarni\OneDrive\Documents\Pictures\card2img.jpg" alt="Offer 2">
+        </div>
+        <div class="offer-card" onclick="window.open('#', '_blank')">
+            <img src="c:\Users\Apoorv Kulkarni\OneDrive\Documents\Pictures\card3img.jpg" alt="Offer 3">
+        </div>
+        <div class="offer-card" onclick="window.open('#', '_blank')">
+            <img src="c:\Users\Apoorv Kulkarni\OneDrive\Documents\Pictures\card5img.jpg" alt="Offer 4">
+           
+        </div>
+    </div>
+</div>
+
+<!-- CSS for Offers Section -->
+<style>
+    .offers-section { margin-top: 50px; }
+    .offers-title { font-size: 30px; font-weight: bold; margin-bottom: 30px; }
+    .offers-container { display: flex; overflow-x: auto; gap: 60px; padding-bottom: 20px; }
+    .offer-card { flex: 0 0 auto; width: 400px; border-radius: 10px; overflow: hidden; cursor: pointer; transition: transform 0.3s; }
+    .offer-card:hover { transform: scale(1.08); }
+    .offer-card img { width: 100%; border-radius: 10px; }
+
+    /* Scrollbar Styling */
+    .offers-container::-webkit-scrollbar { height: 8px; }
+    .offers-container::-webkit-scrollbar-thumb { background: #ccc; border-radius: 5px; }
+</style>
+
+
+
+<p><h1>About Us</h1></p><br>
+
+    <p>
+        <h2>Book Your Bus Tickets on BlueBus</h2>
+        BlueBus is one of the most trusted and convenient online bus booking platforms, making travel easier and more accessible for millions of people. With its user-friendly interface, BlueBus allows passengers to book bus tickets seamlessly, choose their preferred seats, and enjoy a hassle-free journey.
+        The platform offers a wide range of bus operators, routes, and amenities, ensuring comfort and affordability for travelers. Its secure payment options, real-time tracking, and 24/7 customer support enhance the overall travel experience. BlueBus also provides exciting discounts and offers, making bus travel more budget-friendly.<br><br>
+
+        <h2>Live Bus Tracking</h2>
+        Live Bus Tracking is a game-changing feature that allows passengers to track their bus in real time, ensuring a stress-free and well-planned journey. With this feature, travelers can stay updated on the exact location of their bus, estimated arrival time, and any possible delays.
+        <br><br>
+
+    <h3>Benefits of Live Bus Tracking:</h3>
+✅ Real-Time Location Updates – Know exactly where your bus is at any moment.<br>
+✅ Accurate Arrival Time – Get estimated arrival times to plan pickups and drop-offs.<br>
+✅ Reduced Waiting Time – Avoid long waits at bus stops with live tracking.<br>
+✅ Safety & Peace of Mind – Friends and family can track the bus for added security.<br>
+✅ Better Travel Planning – Stay informed about route changes or unexpected delays.<br><br>
+
+<h2>24/7 Customer Support</h2>
+BlueBus ensures a smooth and hassle-free travel experience with its 24/7 customer support, available anytime you need assistance. Whether you have queries about booking, cancellations, refunds, or live tracking, the dedicated support team is just a call or message away.<br><br>
+
+<h3>Why Choose BlueBus 24/7 Support?</h3>
+✅ Instant Assistance – Get help anytime, anywhere.<br>
+✅ Multiple Support Channels – Reach out via call, chat, or email.<br>
+✅ Quick Issue Resolution – Fast response for booking and travel concerns.<br>
+✅ Reliable & Friendly Service – A dedicated team to assist you 24/7.<br><br> 
+
+
+    </p>
+    <p>&copy;  2025 BlueBus</p>
+    </footer>
+   
+     <a href="page2.html"></a>
+     <a href="script.js"></a>
+    
+     
+
+</body>
+</html> 
